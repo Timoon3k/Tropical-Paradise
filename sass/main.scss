@@ -20,7 +20,7 @@ body {
 	font-size: 1.6rem;
 }
 
-// Nawigacja
+// NAV
 .burger-btn {
 	position: fixed;
 	top: 20px;
@@ -74,10 +74,10 @@ body {
 
 .nav {
 	position: fixed;
+	top: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	top: 0;
 	height: 100vh;
 	width: 100%;
 	transform: translateX(100%);
@@ -92,10 +92,10 @@ body {
 	&__item {
 		position: relative;
 		display: block;
-		color: $pure-white;
 		margin: 0.5em 0;
 		padding: 0.5em 2em;
 		font-size: 2.8rem;
+		color: $pure-white;
 		text-decoration: none;
 
 		&::before {
@@ -106,7 +106,7 @@ body {
 			height: 100%;
 			transform: scaleY(0);
 			background-color: $pure-white;
-			transition: transform 0.5s;
+			transition: transform 0.3s;
 			content: '';
 		}
 
@@ -128,6 +128,12 @@ body {
 
 .nav-items-animation {
 	animation: navItemsAnimation 1s both;
+}
+
+.black-bars-color,
+.black-bars-color::after,
+.black-bars-color::before {
+	background-color: $dark;
 }
 
 // Header
@@ -158,11 +164,11 @@ body {
 	&__btn {
 		margin-top: 2em;
 		padding: 0.8em 1.6em;
-		font-size: 1.4em;
+		font-size: 1.4rem;
+		background: $pure-white;
 		border: none;
 		border-radius: 8px;
 		color: $dark;
-		background: $pure-white;
 		text-decoration: none;
 		text-transform: uppercase;
 		cursor: pointer;
@@ -173,7 +179,58 @@ body {
 	}
 }
 
+.dreams {
+	&__box {
+		display: flex;
+		flex-direction: column;
+		margin: 2em 0;
+	}
+
+	&__img {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+
+	&__title {
+		margin-bottom: 0.5em;
+	}
+
+	&__text {
+		font-size: 1.4rem;
+	}
+}
+
 // Responsywność
+
+@media (min-width: 576px) {
+	.dreams {
+		&__box {
+			flex-direction: row;
+			justify-content: space-between;
+
+			&-text {
+				width: 55%;
+
+				&--right {
+					text-align: right;
+				}
+			}
+
+			&-img {
+				width: 40%;
+
+				&--right {
+					order: 1;
+				}
+			}
+		}
+
+		&__img {
+			margin-bottom: 0;
+			max-height: 300px;
+		}
+	}
+}
 
 @media (min-width: 768px) {
 	.white-block {
@@ -194,6 +251,12 @@ body {
 			font-size: 1.6rem;
 		}
 	}
+
+	.dreams {
+		&__text {
+			font-size: 1.8rem;
+		}
+	}
 }
 
 @media (min-width: 992px) {
@@ -201,11 +264,39 @@ body {
 		top: 50px;
 		right: 50px;
 	}
+
 	.header {
-		background-image: $blue-gradient url('../img/header-big.jpg');
+		background-image: $blue-gradient, url('../img/header-big.jpg');
+
+		&__heading {
+			font-size: 10rem;
+		}
 	}
 
-	.heading {
-		font-size: 10rem;
+	.nav {
+		&__item {
+			font-size: 4.8rem;
+		}
+	}
+
+	.dreams {
+		&__box {
+			margin: 5em 0;
+
+			&-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				margin-bottom: 2.5em;
+			}
+		}
+
+		&__title {
+			font-size: 3.6rem;
+		}
+
+		&__text {
+			font-size: 2.2rem;
+		}
 	}
 }
