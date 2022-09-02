@@ -141,7 +141,7 @@ body {
   height: 100%;
   transform: scaleY(0);
   background-color: #fff;
-  transition: transform 0.3s;
+  transition: transform 0.5s;
   content: "";
 }
 .nav__item:hover::before {
