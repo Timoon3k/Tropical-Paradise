@@ -232,7 +232,6 @@ body {
 		&:hover {
 			.islands__card-img {
 				transform: rotateY(-180deg);
-				opacity: 0;
 			}
 
 			.islands__card-info {
@@ -281,22 +280,34 @@ body {
 			position: absolute;
 			top: 0;
 			bottom: 0;
-			left: 0;
 			right: 0;
+			left: 0;
+			display: -webkit-box;
+			display: -ms-flexbox;
 			display: flex;
-			flex-direction: column;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
 			justify-content: center;
-			background-image: $light-blue-gradient-solid;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			background-image: radial-gradient(circle at top right, #004eff 0%, #00d4ff 100%);
 			border-radius: 8px;
 			opacity: 0;
-			transform: translateY(180deg);
-			transition: transform 1s, opactity 1s;
+			-webkit-transform: rotateY(180deg);
+			transform: rotateY(180deg);
+			-webkit-transition: opacity 1s, -webkit-transform 1s;
+			transition: opacity 1s, -webkit-transform 1s;
+			transition: transform 1s, opacity 1s;
+			transition: transform 1s, opacity 1s, -webkit-transform 1s;
 
 			&-title {
 				@include islandCardStyles;
 				top: 1.2em;
 				font-family: 'Dancing Script', cursive;
 				font-size: 2.8rem;
+				transform: translate(-50%);
 			}
 
 			&-list {
@@ -402,6 +413,19 @@ body {
 			font-size: 2.2rem;
 		}
 	}
+
+	.islands {
+		&__cards {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		&__card {
+			margin: 1em;
+			width: 45%;
+		}
+	}
 }
 
 @media (min-width: 992px) {
@@ -458,58 +482,11 @@ body {
 		}
 	}
 }
-@media (min-width: 992px) {
-	.burger-btn {
-		top: 50px;
-		right: 50px;
-	}
 
-	.header {
-		background-image: $blue-gradient, url('../img/header-big.jpg');
-
-		&__heading {
-			font-size: 10rem;
-		}
-	}
-
-	.nav {
-		&__item {
-			font-size: 4.8rem;
-		}
-	}
-
-	.dreams {
-		&__box {
-			margin: 5em 0;
-
-			&-text {
-				display: flex;
-				flex-direction: column;
-				justify-content: flex-end;
-				margin-bottom: 2.5em;
-			}
-		}
-
-		&__title {
-			font-size: 3.6rem;
-		}
-
-		&__text {
-			font-size: 2.2rem;
-		}
-	}
-
-	.hero-img {
-		padding: 40rem 2em;
-		background-image: $blue-gradient, url('../img/hero-big.jpg');
-
-		&__title {
-			font-size: 7.2rem;
-		}
-
-		hr {
-			width: 60%;
-			max-width: 900px;
+@media (min-width: 1100px) {
+	.islands {
+		&__card {
+			width: 30%;
 		}
 	}
 }

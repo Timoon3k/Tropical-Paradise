@@ -293,7 +293,6 @@ body {
 }
 .islands__card:hover .islands__card-img {
   transform: rotateY(-180deg);
-  opacity: 0;
 }
 .islands__card:hover .islands__card-info {
   transform: rotateY(0);
@@ -332,16 +331,16 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
   right: 0;
+  left: 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  background-image: radial-gradient(circle at top right, rgb(0, 78, 255) 0%, rgb(0, 212, 255) 100%);
+  flex-direction: column;
+  background-image: radial-gradient(circle at top right, #004eff 0%, #00d4ff 100%);
   border-radius: 8px;
   opacity: 0;
-  transform: translateY(180deg);
-  transition: transform 1s, opactity 1s;
+  transform: rotateY(180deg);
+  transition: transform 1s, opacity 1s;
 }
 .islands__card-info-title {
   position: absolute;
@@ -350,6 +349,7 @@ body {
   top: 1.2em;
   font-family: "Dancing Script", cursive;
   font-size: 2.8rem;
+  transform: translate(-50%);
 }
 .islands__card-info-list {
   margin: 0 auto;
@@ -428,6 +428,15 @@ body {
   .hero-img__text {
     font-size: 2.2rem;
   }
+  .islands__cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .islands__card {
+    margin: 1em;
+    width: 45%;
+  }
 }
 @media (min-width: 992px) {
   .burger-btn {
@@ -470,44 +479,8 @@ body {
     max-width: 900px;
   }
 }
-@media (min-width: 992px) {
-  .burger-btn {
-    top: 50px;
-    right: 50px;
-  }
-  .header {
-    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/header-big.jpg");
-  }
-  .header__heading {
-    font-size: 10rem;
-  }
-  .nav__item {
-    font-size: 4.8rem;
-  }
-  .dreams__box {
-    margin: 5em 0;
-  }
-  .dreams__box-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-bottom: 2.5em;
-  }
-  .dreams__title {
-    font-size: 3.6rem;
-  }
-  .dreams__text {
-    font-size: 2.2rem;
-  }
-  .hero-img {
-    padding: 40rem 2em;
-    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/hero-big.jpg");
-  }
-  .hero-img__title {
-    font-size: 7.2rem;
-  }
-  .hero-img hr {
-    width: 60%;
-    max-width: 900px;
+@media (min-width: 1100px) {
+  .islands__card {
+    width: 30%;
   }
 }/*# sourceMappingURL=main.css.map */
